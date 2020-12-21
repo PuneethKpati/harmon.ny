@@ -1,1 +1,4 @@
 backend/venv
+frontend/clientID
+frontend/clientSecret
+frontend/node_modules
