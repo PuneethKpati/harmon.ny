@@ -18,6 +18,15 @@ function App() {
         >
           Spotify Login
         </a>
+
+        <a
+          className="App-link"
+          href="http://localhost:5050/login/loginPage?username=bob"
+          target="_top"
+          rel="noopener noreferrer"
+        >
+          fk w bakEnd
+        </a>
       </header>
     </div>
   );
