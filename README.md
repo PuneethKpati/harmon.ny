@@ -1,11 +1,10 @@
 # harmon.ny
 Flask Rest API backend and a React Frontend project that utilises the Spotify Web API.
 
-Sub 
-========
+## Setup 
+The setup for this project requires Python [TODO], npm [TODO] and React [TODO]
 
-subsub
--------------
-
-**bold**
-*italic*
+### REST API Setup
+[TODO]
+### REACT Setup
+[TODO]
