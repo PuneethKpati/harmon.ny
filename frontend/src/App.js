@@ -3,11 +3,9 @@ import './App.css';
 
 function App() {
 
-  
   return (
     <div className="App">
       <header className="App-header">
-        {console.log(window.location.origin)}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           You must <code>login</code> with your Spotify Account...
