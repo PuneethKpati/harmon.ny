@@ -1,7 +1,13 @@
 from flask import Flask
 from flask_restplus import Api
+from flask_cors import CORS 
 
-app = Flask(__name__)
-api = Api(app)
+flaskApp = Flask(__name__)
+# ToDo: Learn about this    
+flaskApp.config['ERROR_404_HELP'] = False
+CORS(flaskApp)
 
-print(api)
+# Backend API server object
+api = Api(flaskApp)
+
+
