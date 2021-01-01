@@ -31,4 +31,4 @@ class LoginPage(Resource):
             abort(403, 'Wrong PAssword Budday!')
 
         # actual function
-        return {'bitch':'you'}
+        return {'fuck':'you'}
