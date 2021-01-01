@@ -1,8 +1,16 @@
 import logo from './logo2.png';
+import axios from 'axios';
 import './App.css';
 
 function App() {
 
+  const linkClick = () => { 
+    axios
+    .get('http://localhost:5050/login/access_token', {'callback_uri':'bob', 'code':'bob'})
+    .then((res) => {
+      console.log(res.data)
+    })
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -19,14 +27,14 @@ function App() {
           Spotify Login
         </a>
 
-        <a
+        <button
           className="App-link"
-          href="http://localhost:5050/login/loginPage?username=bob"
           target="_top"
           rel="noopener noreferrer"
+          onClick = {linkClick}
         >
           fk w bakEnd
-        </a>
+        </button>
       </header>
     </div>
   );
