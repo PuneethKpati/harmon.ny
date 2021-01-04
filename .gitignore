@@ -1,6 +1,8 @@
+.gitignore
 venv
 clientID
 clientSecret
 frontend/clientID
 frontend/clientSecret
 frontend/node_modules
+restful/__pycache__/
