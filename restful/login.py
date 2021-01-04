@@ -39,7 +39,14 @@ class Access_Token(Resource):
         payload = {'redirect_uri':params['redirect_uri'], 'grant_type':params['grant_type'], 'code':params['code'], 'client_id':client_id, 'client_secret':client_secret}
 
         resp = requests.post(tokenUrl, data=payload)
-        
+
         print(resp, resp.text)
+        responseValues = json.loads(resp.text)
+
+        profileURL = 'https://api.spotify.com/v1/me'
+        header = {'Authorization': 'Bearer ' +  responseValues['access_token']}
+        print(header)
+        resp = requests.get(profileURL, headers=header)
+        print(resp.text)
         # actual function
         return {'fuck':'you'}
