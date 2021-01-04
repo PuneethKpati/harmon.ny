@@ -2,13 +2,15 @@ from app import api, client_id, client_secret
 import requests
 from flask_restplus import Resource, abort, reqparse, fields
 from flask import request
+import base64
+import json 
 
 login = api.namespace('login', description='Login Endpoints and Functionalities')
 
 # A list of our required parameters added into one api.model object
 # api.model objects can be 'expected' in API endpoints for parameter handling
 access_code_req = api.model('Access Code Input', {
-    'callback_uri': fields.String(required=True, example='http://localhost:3000/callback'),
+    'redirect_uri': fields.String(required=True, example='http://localhost:3000/callback'),
     'code': fields.String(required=True, example='sdkjfhweoi23890d82e9uhf72heuwkj'),
     'grant_type': fields.String(required=True, example='auth_code')
 })
@@ -31,10 +33,18 @@ class Access_Token(Resource):
 
     @login.expect(access_code_req, validate=True)
     def post(self):
-        #username = str(request.args['username'])
         params = request.json
+        #username = str(request.args['username'])
+        tokenUrl = 'https://accounts.spotify.com/api/token'
+        payload = {'redirect_uri':params['redirect_uri'], 'grant_type':params['grant_type'], 'code':params['code']}
 
+        encodedString = client_id + ':' + client_secret 
+        encodedCreds = base64.b64encode(bytes(encodedString, 'utf-8'))
+        headers = {'Authorization': 'Basic ' + str(encodedCreds, 'utf-8')}
+
+        resp = requests.post(tokenUrl, data=json.dumps(payload), headers=headers)
+        print(payload)
         print(params)
-
+        print(resp)
         # actual function
         return {'fuck':'you'}
