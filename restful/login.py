@@ -14,6 +14,7 @@ access_code_req = api.model('Access Code Input', {
 })
 
 # 
+
 @login.route('/access_token', strict_slashes=False)
 class Access_Token(Resource):
     # defining the repsonse codes available in the scope of this API 
@@ -28,9 +29,11 @@ class Access_Token(Resource):
         Endpoint for calling the Spotify API for step 2 of the authorisation code flow. 
     ''')
 
-    def get(self):
+    @login.expect(access_code_req, validate=True)
+    def post(self):
         #username = str(request.args['username'])
-        params = request.args
+        params = request.json
+
         print(params)
 
         # actual function
