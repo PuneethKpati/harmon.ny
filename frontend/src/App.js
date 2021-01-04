@@ -6,7 +6,7 @@ function App() {
 
   const linkClick = () => { 
     axios
-    .get('http://localhost:5050/login/access_token', {'callback_uri':'bob', 'code':'bob'})
+    .post('http://localhost:5050/login/access_token', {'callback_uri':'bob', 'code':'bob'})
     .then((res) => {
       console.log(res.data)
     })
@@ -24,7 +24,7 @@ function App() {
           target="_top"
           rel="noopener noreferrer"
         >
-          Spotify Login
+          Spotify Logins
         </a>
 
         <button
