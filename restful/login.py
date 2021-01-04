@@ -36,15 +36,10 @@ class Access_Token(Resource):
         params = request.json
         #username = str(request.args['username'])
         tokenUrl = 'https://accounts.spotify.com/api/token'
-        payload = {'redirect_uri':params['redirect_uri'], 'grant_type':params['grant_type'], 'code':params['code']}
+        payload = {'redirect_uri':params['redirect_uri'], 'grant_type':params['grant_type'], 'code':params['code'], 'client_id':client_id, 'client_secret':client_secret}
 
-        encodedString = client_id + ':' + client_secret 
-        encodedCreds = base64.b64encode(bytes(encodedString, 'utf-8'))
-        headers = {'Authorization': 'Basic ' + str(encodedCreds, 'utf-8')}
-
-        resp = requests.post(tokenUrl, data=json.dumps(payload), headers=headers)
-        print(payload)
-        print(params)
-        print(resp)
+        resp = requests.post(tokenUrl, data=payload)
+        
+        print(resp, resp.text)
         # actual function
         return {'fuck':'you'}
