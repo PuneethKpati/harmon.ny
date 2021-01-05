@@ -22,7 +22,7 @@ const Callback = (props) => {
     });
 
     return (
-        <div>
+        <div className="Root">
             {
                 error !== undefined && 
                 <Redirect to='/' />
