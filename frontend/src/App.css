@@ -7,8 +7,8 @@
   pointer-events: none;
 }
 
-.Login {
-  background-image: url('https://c8.alamy.com/comp/D22BAF/ladies-fancy-bag-D22BAF.jpg');
+.Root {
+  background-image: url('http://localhost:3000/static/media/Background2.2d7ac2c5.png');
   position: fixed;
   width: 100%;
   height:100%;

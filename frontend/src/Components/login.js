@@ -20,9 +20,8 @@ const Login = (props) => {
     const classes = useStyles();
 
     return (
-        <div className={ classes.back } >
+        <div className="Root" >
             <header >
-                <img src={logo} className="App-logo" alt="logo" />
                 <Button
                 endIcon={<LockOpenRoundedIcon />}
                 variant="contained"
@@ -30,7 +29,7 @@ const Login = (props) => {
                 colour="#086213"
                 href="https://accounts.spotify.com/authorize?response_type=code&client_id=c040d3bbb7854c27a1e4ca23de239e5e&redirect_uri=http://localhost:3000/callback"
                 >
-                Login
+                Login With Spotify
                 </Button>
             </header>
             
