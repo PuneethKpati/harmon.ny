@@ -7,6 +7,14 @@
   pointer-events: none;
 }
 
+.Login {
+  background-image: url('https://c8.alamy.com/comp/D22BAF/ladies-fancy-bag-D22BAF.jpg');
+  position: fixed;
+  width: 100%;
+  height:100%;
+  background-size: cover;
+  background-position: center;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-fade infinite 7s linear;
@@ -14,7 +22,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #222021;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +33,7 @@
 }
 
 .App-link {
-  color: #ff914d;
+  color: #a8511a;
 }
 
 @keyframes App-logo-spin {
