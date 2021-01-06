@@ -8,7 +8,7 @@
 }
 
 .Root {
-  background-image: url('http://localhost:3000/static/media/Background2.7809604a.png');
+  background-image: url('./res/Background.png');
   position: fixed;
   width: 100%;
   height:100%;

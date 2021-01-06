@@ -49,10 +49,10 @@ const Bar = (props) => {
                         
                     </Typography>
 
-                    <IconButton size='Medium' href='/play'  color='inherit' >
+                    <IconButton size='medium' href='/play'  color='inherit' >
                         <OfflineBoltIcon fontSize='large'>add_circle</OfflineBoltIcon>
                     </IconButton>
-                    <IconButton size='Medium' href='/about'  color='inherit' >
+                    <IconButton size='medium' href='/about'  color='inherit' >
                         <InfoIcon fontSize='large'>add_circle</InfoIcon>
                     </IconButton>
                     <LoginIcon />
