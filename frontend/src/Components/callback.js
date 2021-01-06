@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import qs from 'qs';
-
+import Bar from './bar';
 const Callback = (props) => {
     
     const [resp, setResp] = useState('');
@@ -15,7 +15,6 @@ const Callback = (props) => {
             .post('http://localhost:5050/authorization/access_token', {'redirect_uri':'http://localhost:3000/callback', 'code':code, 'grant_type':'authorization_code'})
             .then((res) => {
             console.log(res.data)
-            setResp(res.data)
             })
         }
         
@@ -23,11 +22,11 @@ const Callback = (props) => {
 
     return (
         <div className="Root">
+            <Bar />
             {
                 error !== undefined && 
                 <Redirect to='/' />
             }
-            {resp['error']}
         </div>
     );
 }

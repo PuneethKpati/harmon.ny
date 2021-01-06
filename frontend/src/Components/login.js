@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../res/logo2.png';
-import background from '../res/Background.png';
+import Bar from './bar';
+import background from '../res/Background2.png';
 import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import LockOpenRoundedIcon from '@material-ui/icons/LockOpenRounded';;
@@ -21,6 +21,7 @@ const Login = (props) => {
 
     return (
         <div className="Root" >
+            <Bar />
             <header >
                 <Button
                 endIcon={<LockOpenRoundedIcon />}
