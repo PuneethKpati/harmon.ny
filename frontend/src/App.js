@@ -1,6 +1,6 @@
 import './App.css';
 import Callback from './Components/callback';
-import Login from './Components/login';
+import Home from './Components/home';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={Home} />
           <Route path="/callback" component={Callback} />
         </Switch>
       </Router>

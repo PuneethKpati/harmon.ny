@@ -5,7 +5,6 @@ import qs from 'qs';
 import Bar from './bar';
 const Callback = (props) => {
     
-    const [resp, setResp] = useState('');
     const [code, setCode] = useState(qs.parse(props.location.search, { ignoreQueryPrefix: true }).code); 
     const [error, setError] = useState(qs.parse(props.location.search, { ignoreQueryPrefix: true }).error);
 
