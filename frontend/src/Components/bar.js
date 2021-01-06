@@ -9,6 +9,14 @@ import OfflineBoltIcon from '@material-ui/icons/OfflineBolt';
 import InfoIcon from '@material-ui/icons/Info';
 import { makeStyles } from '@material-ui/core';
 
+const actionB = {
+    height:'50px',
+    width:'50px',
+    borderRadius: '50%',
+    opacity: '60%',
+    marginTop: '10px'
+};
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -19,7 +27,12 @@ const useStyles = makeStyles((theme) => ({
         position: 'static',
         color: 'white',
     },
-
+    logo:{
+        height:'60px',
+        width:'60px',
+        opacity: '80%',
+        marginTop: '5px'
+    },
     title:{
         flexGrow: 1,
     },
@@ -30,10 +43,12 @@ const useStyles = makeStyles((theme) => ({
         minWidth: '30px',
     },
     profileIcon: {
-        height:'30px',
-        width:'30px',
+        height:'43px',
+        width:'43px',
         borderRadius: '50%',
+        marginTop: '7px'
     },
+    actionButton:actionB,
 }));
 
 const Bar = (props) => {
@@ -43,26 +58,37 @@ const Bar = (props) => {
         <div className={ classes.root }>
             <AppBar className={ classes.App_bar }>
                 <ToolBar>
-                    
-                    <img src={logo} alt='logo' className={ classes.smallIcon }/>
-                    <Typography variant="h6" className={classes.title}>
-                        
-                    </Typography>
+                    <IconButton 
+                    size='medium' 
+                    href='/'  
+                    color='inherit' >
+                        <img src={logo} className={classes.logo} alt='App logo'/>
+                    </IconButton>
 
-                    <IconButton size='medium' href='/play'  color='inherit' >
-                        <OfflineBoltIcon fontSize='large'>add_circle</OfflineBoltIcon>
+                    <Typography variant="h6" className={classes.title}></Typography>
+                    
+                    <IconButton 
+                    size='medium' 
+                    href='/play'  
+                    color='inherit' >
+                        <OfflineBoltIcon className={ classes.actionButton } >add_circle</OfflineBoltIcon>
                     </IconButton>
-                    <IconButton size='medium' href='/about'  color='inherit' >
-                        <InfoIcon fontSize='large'>add_circle</InfoIcon>
+
+                    <IconButton 
+                    size='medium' 
+                    href='/about'  
+                    color='inherit' >
+                        <InfoIcon className={ classes.actionButton }>add_circle</InfoIcon>
                     </IconButton>
-                    <LoginIcon />
+
+                    <LoginIcon style={actionB}/>
                     /
                     <IconButton href='/profile'>
-                    <img 
-                    src='https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1610412742557313&height=300&width=300&ext=1612484090&hash=AeRVSYFlJRxODyQiS2o' 
-                    className={classes.profileIcon}
-                    alt='Spotify profile logo'
-                    />
+                        <img 
+                        src='https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1610412742557313&height=300&width=300&ext=1612484090&hash=AeRVSYFlJRxODyQiS2o' 
+                        className={classes.profileIcon}
+                        alt='Spotify profile logo'
+                        />
                     </IconButton>
                     
                     
