@@ -17,6 +17,8 @@ const Callback = (props) => {
                 console.log(res.data)
                 setResp(res.data)
             })
+
+            // Add a session token system here.
         }
     }, []);
 
